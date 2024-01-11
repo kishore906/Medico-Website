@@ -1,0 +1,720 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(5px); */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 40px;
+}
+
+.hero-content h2 {
+  font-size: 45px;
+  color: black;
+}
+
+.hero-content p {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 20px 0px;
+}
+
+#btn-knowMore {
+  text-decoration: none;
+  background: #717ff5;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 50px;
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    height: 100vh;
+  }
+
+  .hero-content {
+    left: 50%;
+    text-align: center;
+  }
+}
+
+/* =========== NavBar CSS =========== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#header {
+  background-color: #eff6f7;
+}
+
+.headerWithNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerWithNav .header_logo {
+  text-decoration: none;
+}
+
+.headerWithNav .header_logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.headerWithNav .header_logo span {
+  position: relative;
+  top: -15px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: black;
+  text-transform: uppercase;
+}
+
+#closeBtn,
+#openBtn {
+  display: none;
+}
+
+.nav_links a {
+  text-decoration: none;
+  margin-left: 15px;
+  text-transform: uppercase;
+  color: #555555;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.nav_links a:hover {
+  color: #65c9cd;
+}
+
+#btn-appointment {
+  background-color: #3fbbc0;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+/* CSS for making header sticky after scroll */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* .sticky + .about {
+  margin-top: 20px;
+} */
+
+@media (max-width: 850px) {
+  #closeBtn,
+  #openBtn {
+    display: block;
+    font-size: 25px;
+  }
+
+  .nav_links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 350px;
+    text-align: center;
+    background: #d6d8d8;
+    transition: 0.3s ease-in-out;
+    overflow-x: hidden;
+  }
+
+  .nav_links a {
+    display: block;
+    padding-top: 40px;
+  }
+
+  #btn-appointment {
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  #closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+}
+
+/* ============= All Section Titles CSS ============= */
+.section-title {
+  margin: 80px 40px;
+  text-align: center;
+}
+
+.section-title h2 {
+  text-transform: uppercase;
+  font-size: 25px;
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  height: 3px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+  left: calc(50% + 90px);
+  background-color: #65c9cd;
+  width: 50px;
+}
+
+.section-title h2::before {
+  content: "";
+  height: 3px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+  right: calc(50% + 90px);
+  background-color: #65c9cd;
+  width: 50px;
+}
+
+/* ============= About Section CSS ============ */
+#about {
+  margin-top: 50px;
+}
+
+.about-container {
+  display: flex;
+  gap: 30px;
+}
+
+.about-image {
+  width: 50%;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-content {
+  width: 50%;
+}
+
+.about-container p {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about-content i {
+  color: #65c9cd;
+  font-size: 20px;
+}
+
+.about-content span {
+  display: block;
+}
+
+@media (max-width: 850px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image,
+  .about-content {
+    width: 100%;
+  }
+}
+
+/* ================= Counts Section CSS ===============*/
+.counts-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 80px;
+}
+
+.count-box {
+  width: 220px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.iconAndNum i {
+  font-size: 50px;
+  color: #3fbbc0;
+  margin-right: 10px;
+}
+
+.iconAndNum span {
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.count-box h4 {
+  margin: 15px 0px;
+  font-size: 18px;
+}
+
+#findoutmore {
+  color: #555555;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 850px) {
+  .counts-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* ============= Services Section CSS ============== */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.service {
+  text-align: center;
+  padding: 40px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.service::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #3fbbc0;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(25% at 100% 0%);
+}
+
+.service .service-icon {
+  border-radius: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.service i {
+  color: #3fbbc0;
+  font-size: 36px;
+}
+
+.service h3 {
+  margin: 20px;
+  font-weight: 800;
+}
+
+@media (max-width: 850px) {
+  .services-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* =========== Appointment CSS ============== */
+#appointment {
+  margin-top: 80px;
+  background: #e8fdfd;
+}
+
+#appointment h2 {
+  margin: 40px 0px;
+  text-align: center;
+}
+
+.appointment-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  /* padding: 10px; */
+}
+
+.appointment-form input,
+.appointment-form select {
+  padding: 10px;
+  border: 1px solid lightblue;
+  font-weight: 600;
+  outline: none;
+  color: #555555;
+}
+
+.textarea {
+  grid-column: 1 / 4;
+  outline: none;
+  border: 1px solid lightblue;
+  font-weight: 600;
+}
+
+#btn-appointment-form {
+  grid-column: 2 / 3;
+  margin-bottom: 40px;
+  border: none;
+  background: #65c9cd;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 12px 0px;
+  border-radius: 25px;
+}
+
+@media (max-width: 850px) {
+  .item1,
+  .item2,
+  .item3,
+  .item4,
+  .item5,
+  .item6,
+  #btn-appointment-form {
+    grid-column: 1 / 4;
+  }
+}
+
+/* --------- Departments CSS --------- */
+.tab button {
+  background: #d6d8d8;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  transition: 0.3s;
+  font-size: 18px;
+  width: 242px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-left: 4px solid #d6d8d8;
+}
+
+.tab button:hover {
+  background-color: #f1eded;
+  border-color: blue;
+}
+
+.tab button.active {
+  background-color: #f1eded;
+  border-color: blue;
+}
+
+.tabcontent {
+  display: none;
+  margin: 8px 0px;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.tabcontent h3 {
+  color: #555555;
+  font-size: 25px;
+}
+
+.tabcontent p {
+  margin: 14px 0px;
+}
+
+.tabcontent img {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.tabcontent::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media (max-width: 850px) {
+  .tab button {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+/* ---------- Doctors Section CSS ---------- */
+.doctors-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.doctor-info {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  padding: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.image {
+  width: 230px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid lightblue;
+  margin-right: 20px;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-content h3 {
+  color: #555555;
+  font-size: 22px;
+}
+
+.doctor-content span {
+  display: block;
+  margin-top: 8px;
+  font-size: 17px;
+  color: #ccc;
+  position: relative;
+}
+
+.doctor-content span::after {
+  content: "";
+  height: 1px;
+  background: blue;
+  width: 50px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.doctor-content p {
+  margin: 20px 0px;
+}
+
+.social-icons i {
+  margin: 15px 14px 15px 0px;
+  background: #3fbbc0;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  text-align: center;
+  padding-top: 8px;
+  font-size: 18px;
+}
+
+@media (max-width: 800px) {
+  .image {
+    width: 180px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 400px) {
+  .image {
+    width: 180px;
+    height: 90px;
+  }
+}
+/* --------- Contact CSS -------- */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-info {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.contact-info-box1,
+.contact-info-box2,
+.contact-info-box3 {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 40px 0px;
+}
+
+.contact-info-box1 {
+  grid-column: 1 / 3;
+}
+
+.contact-info i {
+  color: #3fbbc0;
+  font-size: 35px;
+  border: 3px dotted lightblue;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+}
+
+.contact-info h4 {
+  margin: 14px 0px;
+  color: #555555;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.contact-info p {
+  line-height: 25px;
+}
+
+.contact-form {
+  width: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.contact-form input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid lightblue;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid lightblue;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#btn-sendMessage {
+  display: block;
+  margin: 20px auto;
+  border: none;
+  background: #3fbbc0;
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+@media (max-width: 850px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+  .contact-form {
+    width: 100%;
+  }
+}
+
+/* ------- Gallery Section CSS ------- */
+/* .gallery {
+  overflow: hidden;
+} */
+
+.gallery-image {
+  height: 180px;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-slider .swiper-pagination {
+  position: relative;
+  margin-top: 30px;
+}
+
+.gallery-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #3fbbc0;
+}
+
+.gallery-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #3fbbc0;
+}
+
+@media (max-width: 850px) {
+  .gallery-image {
+    width: 100%;
+    height: 40vh;
+  }
+}
+
+/* ------- Footer Section ------- */
+#footer {
+  margin-top: 40px;
+  background: #f0f5f5;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+/* ---- arrow up button ---- */
+#arrow-up {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  background: #3fbbc0;
+  padding: 14px;
+  color: #fff;
+  border-radius: 4px;
+}
